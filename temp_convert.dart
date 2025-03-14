@@ -1,11 +1,11 @@
 import 'dart:io';
 
-// Function Celcius to Fahrenheit
+// Function Celsius to Fahrenheit
 double celsiusToFahrenheit(double value) {
   return value * 9 / 5 + 32;
 }
 
-// Function Fahrenheit to Celcius
+// Function Fahrenheit to Celsius
 double fahrenheitToCelsius(double value) {
   return (value - 32) * 5 / 9;
 }
@@ -23,6 +23,12 @@ int userChoice() {
 void main() {
   int choice = userChoice();
 
+  // Validates choice before moving on
+  if (choice != 1 && choice != 2) {
+    print("Ungültige Auswahl.");
+    return; // Stops the program early
+  }
+
   print("Gib den Temperaturwert ein:");
   String? input = stdin.readLineSync();
   double value = double.parse(input!);
@@ -32,11 +38,8 @@ void main() {
   if (choice == 1) {
     result = celsiusToFahrenheit(value);
     print("$value°C = ${result.toStringAsFixed(2)}°F");
-  } else if (choice == 2) {
+  } else {
     result = fahrenheitToCelsius(value);
     print("$value°F = ${result.toStringAsFixed(2)}°C");
-  } else {
-    print("Ungültige Auswahl.");
   }
 }
-
