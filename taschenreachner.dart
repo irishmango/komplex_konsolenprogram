@@ -6,17 +6,13 @@ double calculate({double? x, double? y}) {
   if (x == null) {
     print("Bitte gib den Wert für x ein:");
     String? inputX = stdin.readLineSync();
-    x = inputX != null && inputX.isNotEmpty
-        ? double.parse(inputX)
-        : 0; // Default to 0 if input is null or empty
+    x = inputX != null && inputX.isNotEmpty ? double.parse(inputX) : 0; // Default to 0 if input is null or empty
   }
 
   if (y == null) {
     print("Bitte gib den Wert für y ein:");
     String? inputY = stdin.readLineSync();
-    y = inputY != null && inputY.isNotEmpty
-        ? double.parse(inputY)
-        : 0; // Default to 0 if input is null or empty
+    y = inputY != null && inputY.isNotEmpty ? double.parse(inputY) : 0; // Default to 0 if input is null or empty
   }
 
   print("Wähle eine Operation: +  -  *  /");
