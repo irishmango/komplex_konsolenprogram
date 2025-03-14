@@ -1,13 +1,16 @@
 import 'dart:io';
 
+// Function Celcius to Fahrenheit
 double celsiusToFahrenheit(double value) {
   return value * 9 / 5 + 32;
 }
 
+// Function Fahrenheit to Celcius
 double fahrenheitToCelsius(double value) {
   return (value - 32) * 5 / 9;
 }
 
+// User chooses what direction the conversion should run
 int userChoice() {
   print("Was möchtest du umrechnen?");
   print("1: Celsius => Fahrenheit");
