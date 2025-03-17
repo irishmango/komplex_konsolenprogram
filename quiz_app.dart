@@ -2,37 +2,8 @@ import 'dart:io';
 
 void main() {
   String name = welcomeUser();
-  
-  int score = 0;
 
-  // List of questions
-  List<Map<String, dynamic>> quiz = [
-    {
-      'question': "What is the largest planet in the solar system?",
-      'options': ['a - Earth', 'b - Mars', 'c - Jupiter', 'd - Saturn'],
-      'answer': 'c'
-    },
-    {
-      'question': "What is the country with the largest population?",
-      'options': ['a - India', 'b - USA', 'c - China', 'd - Russia'],
-      'answer': 'a'
-    },
-    {
-      'question': "Who created Flutter?",
-      'options': ['a - Apple', 'b - Google', 'c - IBM', 'd - Samsung'],
-      'answer': 'b'
-    },
-    {
-      'question': "What is the capital city of France?",
-      'options': ['a - Berlin', 'b - Madrid', 'c - Paris', 'd - Rome'],
-      'answer': 'c'
-    },
-    {
-      'question': "Which programming language is used to develop Flutter apps?",
-      'options': ['a - Java', 'b - Dart', 'c - Kotlin', 'd - Swift'],
-      'answer': 'b'
-    },
-  ];
+  int score = 0;
 
   // Ask each question
   for (var q in quiz) {
@@ -62,8 +33,6 @@ String welcomeUser() {
   return name;
 }
 
-
-
 bool askQuestion(Map<String, dynamic> q) {
   print("\n${q['question']}");
   q['options'].forEach(print);
@@ -72,7 +41,7 @@ bool askQuestion(Map<String, dynamic> q) {
 
   if (!['a', 'b', 'c', 'd'].contains(input)) {
     print("Invalid Answer. Please enter a, b, c, or d.");
-    return askQuestion(q); // if invalid input, question is repeated
+    return askQuestion(q); // Repeat question if invalid input
   }
 
   if (input == q['answer']) {
@@ -83,3 +52,31 @@ bool askQuestion(Map<String, dynamic> q) {
     return false;
   }
 }
+
+List<Map<String, dynamic>> quiz = [
+  {
+    'question': "What is the largest planet in the solar system?",
+    'options': ['a - Earth', 'b - Mars', 'c - Jupiter', 'd - Saturn'],
+    'answer': 'c'
+  },
+  {
+    'question': "What is the country with the largest population?",
+    'options': ['a - India', 'b - USA', 'c - China', 'd - Russia'],
+    'answer': 'a'
+  },
+  {
+    'question': "Who created Flutter?",
+    'options': ['a - Apple', 'b - Google', 'c - IBM', 'd - Samsung'],
+    'answer': 'b'
+  },
+  {
+    'question': "What is the capital city of France?",
+    'options': ['a - Berlin', 'b - Madrid', 'c - Paris', 'd - Rome'],
+    'answer': 'c'
+  },
+  {
+    'question': "Which programming language is used to develop Flutter apps?",
+    'options': ['a - Java', 'b - Dart', 'c - Kotlin', 'd - Swift'],
+    'answer': 'b'
+  },
+];
